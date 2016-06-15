@@ -8,7 +8,6 @@ import android.widget.Scroller;
  * author: leo on 2016/6/14 0014 13:24
  * email : leocheung4ever@gmail.com
  * description: viewpager scroller
- * what & why is modified:
  */
 public class ViewPagerScroller extends Scroller {
 

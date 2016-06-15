@@ -13,7 +13,6 @@ import com.zoro.roronoazorobanner.listener.OnItemClickListener;
  * author: leo on 2016/6/14 0014 10:18
  * email : leocheung4ever@gmail.com
  * description: ViewPager which enable loop
- * what & why is modified:
  */
 public class ZoroLoopViewPager extends ViewPager {
 

@@ -6,12 +6,8 @@ import android.view.View;
 /**
  * author: leo on 2016/6/14 0014 12:29
  * email : leocheung4ever@gmail.com
- * description:
- * what & why is modified:
  */
 public interface Holder<T> {
-
     View createView(Context context);
-
     void UpdateUI(Context context, int position, T data);
 }

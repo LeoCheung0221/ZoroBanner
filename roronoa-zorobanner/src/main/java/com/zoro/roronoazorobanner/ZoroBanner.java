@@ -29,7 +29,6 @@ import java.util.List;
  * author: leo on 2016/6/14 0014 09:03
  * email : leocheung4ever@gmail.com
  * description: advertisement banner
- * what & why is modified:
  */
 public class ZoroBanner<T> extends LinearLayout {
 
@@ -84,6 +83,9 @@ public class ZoroBanner<T> extends LinearLayout {
      * 父Banner控件需要分发事件
      * 触摸控件的时候 翻页应该停止
      * 离开界面的时候 如果开启了翻页 则重新启动翻页
+     *
+     * @param ev
+     * @return
      */
     @Override
     public boolean dispatchTouchEvent(MotionEvent ev) {
@@ -161,6 +163,10 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置ViewPager 包括数据适配 是否循环开启
+     *
+     * @param holderCreator
+     * @param dataList
+     * @return
      */
     public ZoroBanner setPages(ZoroViewHolderCreator holderCreator, List<T> dataList) {
         this.mDatas = dataList;
@@ -185,6 +191,9 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置底部指示器的可见性
+     *
+     * @param visible
+     * @return
      */
     public ZoroBanner setPageIndicatorVisible(boolean visible) {
         llPageIndicator.setVisibility(visible ? View.VISIBLE : View.GONE);
@@ -220,6 +229,9 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置指示器的布局位置
+     *
+     * @param align
+     * @return
      */
     public ZoroBanner setPageIndicatorAlign(PageIndicatorAlign align) {
         RelativeLayout.LayoutParams layoutParams = (RelativeLayout.LayoutParams) llPageIndicator.getLayoutParams();
@@ -232,6 +244,9 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 开启翻页功能
+     *
+     * @param autoTurningTime
+     * @return
      */
     public ZoroBanner startTurning(long autoTurningTime) {
         if (turning)
@@ -250,6 +265,9 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置页面切换动画效果
+     *
+     * @param transformer
+     * @return
      */
     public ZoroBanner setPageTransformer(ViewPager.PageTransformer transformer) {
         viewPager.setPageTransformer(true, transformer);
@@ -258,6 +276,9 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置页面切换监听器
+     *
+     * @param onPageChangeListener
+     * @return
      */
     public ZoroBanner setOnPageChangeListener(ViewPager.OnPageChangeListener onPageChangeListener) {
         this.onPageChangeListener = onPageChangeListener;
@@ -272,6 +293,9 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 监听item点击
+     *
+     * @param onItemClickListener
+     * @return
      */
     public ZoroBanner setOnItemClickListener(OnItemClickListener onItemClickListener) {
         if (onItemClickListener == null) {
@@ -286,6 +310,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 是否正在切换页面
+     *
+     * @return
      */
     public boolean isTurning() {
         return turning;
@@ -293,6 +319,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 获取页面切换监听器
+     *
+     * @return
      */
     public ViewPager.OnPageChangeListener getOnPageChangeListener() {
         return onPageChangeListener;
@@ -300,6 +328,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 获取当前的页面position
+     *
+     * @return
      */
     public int getCurrentItem() {
         if (viewPager != null)
@@ -309,6 +339,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置当前的页面index
+     *
+     * @param position
      */
     public void setCurrentItem(int position) {
         if (viewPager != null)
@@ -317,6 +349,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置ViewPager的滚动时间 时间越长 滚动越慢
+     *
+     * @param scrollDuration
      */
     public void setScrollDuration(int scrollDuration) {
         scroller.setScrollDuration(scrollDuration);
@@ -324,6 +358,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 获得ViewPager的滚动时间
+     *
+     * @return
      */
     public int getScrollDuration() {
         return scroller.getScrollDuration();
@@ -331,6 +367,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 设置循环
+     *
+     * @param isLoop
      */
     public void setLoop(boolean isLoop) {
         this.isLoop = isLoop;
@@ -339,6 +377,8 @@ public class ZoroBanner<T> extends LinearLayout {
 
     /**
      * 获得ViewPager对象
+     *
+     * @return
      */
     public ZoroLoopViewPager getViewPager() {
         return viewPager;

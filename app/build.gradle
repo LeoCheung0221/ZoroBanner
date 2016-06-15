@@ -25,3 +25,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
     compile project(':roronoa-zorobanner')
 }
+
+tasks.withType(Javadoc) {
+    options.encoding = "UTF-8"
+}

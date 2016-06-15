@@ -15,7 +15,6 @@ import java.util.List;
  * author: leo on 2016/6/14 0014 10:23
  * email : leocheung4ever@gmail.com
  * description: adapter for viewpager
- * what & why is modified:
  */
 public class ZoroPagerAdapter<T> extends PagerAdapter {
 
@@ -39,7 +38,9 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     //=================================== Override Methods =======================================//
 
     /**
-     * 返回要滑动的view的个数
+     * 返回当前滑动视图的个数
+     *
+     * @return
      */
     @Override
     public int getCount() {
@@ -47,7 +48,11 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     }
 
     /**
-     * 将当前视图添加到container中  病返回当前view
+     * 创建指定为位置的视图
+     *
+     * @param container
+     * @param position
+     * @return 返回一个代表新增页面视图的Object(key)
      */
     @Override
     public Object instantiateItem(ViewGroup container, int position) {
@@ -58,7 +63,11 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     }
 
     /**
-     * 当前的页面是否与给定的键相关联
+     * 判断返回的key值与一个页面的视图是否是代表同一个
+     *
+     * @param view
+     * @param object
+     * @return
      */
     @Override
     public boolean isViewFromObject(View view, Object object) {
@@ -66,7 +75,11 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     }
 
     /**
-     * 从当前container中删除指定位置的view
+     * 从container中移除给定位置的view
+     *
+     * @param container
+     * @param position
+     * @param object
      */
     @Override
     public void destroyItem(ViewGroup container, int position, Object object) {
@@ -74,6 +87,11 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
         container.removeView(view);
     }
 
+    /**
+     * 返回是否已完成视图与key值得匹配
+     *
+     * @param container
+     */
     @Override
     public void finishUpdate(ViewGroup container) {
         int position = viewPager.getCurrentItem();
@@ -91,7 +109,10 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     //====================================== Public Methods ======================================//
 
     /**
-     * 根据数据容量大小 取模计算可循环展示的位置
+     * 获得当前位置的索引 取模计算值作为循环播放位置
+     *
+     * @param position
+     * @return
      */
     public int getPresentPosition(int position) {
         int dataSize = getDataSize();
@@ -102,7 +123,9 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     }
 
     /**
-     * 获取数据源大小
+     * 获得数据容量大小�
+     *
+     * @return
      */
     public int getDataSize() {
         return mDatas == null ? 0 : mDatas.size();
@@ -130,7 +153,9 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
     }
 
     /**
-     * 设置可以循环播放
+     * 设置是否循环播放
+     *
+     * @param isLoop
      */
     public void setCanLoop(boolean isLoop) {
         this.isLoop = isLoop;
@@ -142,6 +167,8 @@ public class ZoroPagerAdapter<T> extends PagerAdapter {
 
     /**
      * 设置ViewPager
+     *
+     * @param viewPager
      */
     public void setViewPager(ZoroLoopViewPager viewPager) {
         this.viewPager = viewPager;

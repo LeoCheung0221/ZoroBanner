@@ -9,7 +9,6 @@ import java.util.ArrayList;
  * author: leo on 2016/6/14 0014 14:13
  * email : leocheung4ever@gmail.com
  * description: page turning adapter
- * what & why is modified:
  */
 public class ZoroPageChangeListener implements ViewPager.OnPageChangeListener {
 
