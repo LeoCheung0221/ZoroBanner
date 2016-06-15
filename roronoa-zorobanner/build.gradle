@@ -17,6 +17,7 @@ android {
         }
     }
 
+    //防止在bintrayUpload时出现各种找不到错误
     lintOptions{
         abortOnError false
         checkReleaseBuilds false
@@ -53,6 +54,7 @@ dependencies {
     compile 'com.android.support:appcompat-v7:23.4.0'
 }
 
+//防止bintrayUpload上传时出现的编码GBK不可映射字符错误
 tasks.withType(Javadoc) {
     options.encoding = "UTF-8"
 }
