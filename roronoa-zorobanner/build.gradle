@@ -28,7 +28,7 @@ ext {
     bintrayRepo = 'RepoClimax'
     bintrayName = 'zorobanner'
 
-    publishedGroupId = 'om.zoro.roronoazorobanner'
+    publishedGroupId = 'com.zoro.roronoazorobanner'
     libraryName = 'ZoroBanner'
     artifact = 'roronoa-zorobanner'
 
