@@ -203,7 +203,7 @@ public class ZoroBanner<T> extends LinearLayout {
     /**
      * 设置底部指示器资源图片
      */
-    private ZoroBanner setPageIndicators(int[] pageIndicatorId) {
+    public ZoroBanner setPageIndicators(int[] pageIndicatorId) {
         this.pageIndicatorId = pageIndicatorId;
         llPageIndicator.removeAllViews();
         mPointViews.clear();
